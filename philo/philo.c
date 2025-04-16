@@ -2,19 +2,23 @@
 
 int main(int ac, char **av)
 {
-	int   i;
+	s_data	data;
 
-	i = 0;
-	// pthread_init();
-	// pthread_create();
-	if (ac == 4 || ac == 5)
+	if (ac == 5 || ac == 6)
 	{
-		valid_args(av);
-		printf("all good\n");
+		data.n_of_philo = ft_atoi(av[1]);
+		data.t_to_die = ft_atoi(av[2]);
+		data.t_to_eat = ft_atoi(av[3]);
+		data.t_to_sleep = ft_atoi(av[4]);
+		if (ac == 6)
+			data.n_of_t_each_philo_must_eat = ft_atoi(av[5]);
+		else
+			data.n_of_t_each_philo_must_eat = -1;
+		printf("n_of_philo = %d\n", data.n_of_philo);
+		printf("t_to_die = %d\n", data.t_to_die);
+		printf("t_to_eat = %d\n", data.t_to_eat);
+		printf("t_to_sleep = %d\n", data.t_to_sleep);
+		printf("n_of_t_each_philo_must_eat = %d\n", data.n_of_t_each_philo_must_eat);
 	}
-	while (i < ac)
-		printf("%s\n", av[i++]);
-	// pthread_exit();
 	return (0);
 }
-
