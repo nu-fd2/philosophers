@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fd2 <fd2@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/20 00:49:00 by fd2               #+#    #+#             */
+/*   Updated: 2025/04/20 00:55:45 by fd2              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHILO_H
 # define PHILO_H
 
@@ -13,15 +25,15 @@
 void	is_error(char *str, void *p1, void *p2);
 int		ft_atoi(const char *str);
 
-typedef	struct t_philo
+typedef struct s_philo
 {
 	int				id;
 	pthread_t		trd;
 	pthread_mutex_t	*left_fork;
 	pthread_mutex_t	*right_fork;
-}					s_philo;
+}					t_philo;
 
-typedef struct t_data
+typedef struct s_data
 {
 	int				n_of_philo;
 	int				t_to_die;
@@ -30,6 +42,6 @@ typedef struct t_data
 	int				n_of_t_each_philo_must_eat;
 	pthread_t		*philos;
 	pthread_mutex_t	*forks;
-}					s_data;
+}					t_data;
 
 #endif //PHILO_H

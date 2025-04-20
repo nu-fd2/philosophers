@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fd2 <fd2@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/20 00:47:27 by fd2               #+#    #+#             */
+/*   Updated: 2025/04/20 00:56:36 by fd2              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
-bool	sep(s_data *data, char **av, bool s)
+bool	sep(t_data *data, char **av, bool s)
 {
 	data->n_of_philo = ft_atoi(av[1]);
 	data->t_to_die = ft_atoi(av[2]);
@@ -15,7 +27,7 @@ bool	sep(s_data *data, char **av, bool s)
 	data->forks = malloc(sizeof(pthread_mutex_t) * data->n_of_philo);
 	if (!(data->forks))
 		is_error("malloc filat", data->forks, NULL);
-	data->philos =  malloc(sizeof(pthread_t) * data->n_of_philo);
+	data->philos = malloc(sizeof(pthread_t) * data->n_of_philo);
 	if (!(data->philos))
 		is_error("malloc tanya filat", data->forks, data->philos);
 	return (0);
@@ -23,7 +35,7 @@ bool	sep(s_data *data, char **av, bool s)
 
 int	main(int ac, char **av)
 {
-	s_data			data;
+	t_data			data;
 
 	if (ac == 5 || ac == 6)
 	{
