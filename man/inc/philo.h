@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fd2 <fd2@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 00:49:00 by fd2               #+#    #+#             */
-/*   Updated: 2025/04/20 00:55:45 by fd2              ###   ########.fr       */
+/*   Created: 2025/04/20 00:49:00 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/09/25 04:32:24 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,14 @@ typedef struct s_philo
 {
 	int				id;
 	pthread_t		trd;
-	pthread_mutex_t	*left_fork;
-	pthread_mutex_t	*right_fork;
+
+	int				lst_m;
+	int				m_etn;
+
+	pthread_mutex_t	*l_fork;
+	pthread_mutex_t	*r_fork;
+
+	struct s_data	*data;
 }					t_philo;
 
 typedef struct s_data
@@ -40,7 +46,13 @@ typedef struct s_data
 	int				t_to_eat;
 	int				t_to_sleep;
 	int				n_of_t_each_philo_must_eat;
-	pthread_t		*philos;
+
+	bool			f_dead;
+
+	int				strt_tm;
+	pthread_mutex_t *prnt_lock;
+
+	t_philo			*philos;
 	pthread_mutex_t	*forks;
 }					t_data;
 
