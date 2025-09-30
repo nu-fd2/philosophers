@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_error.c                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 00:51:43 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/09/30 07:47:01 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/09/30 06:39:10 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/09/30 07:37:25 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
-void	is_error(char *str, void *p1, void *p2)
+int	main(int ac, char **av)
 {
-	if (str)
-		printf("\e[1;31m%s\e[0m\n", str);
-	if (p1)
-		free(p1);
-	if (p2)
-		free(p2);
-	write(2, "\e[1;31mError\e[0m\n", 17);
-	exit(1);
+	t_data			*data;
+
+    data = malloc(sizeof(t_data) * 1);
+	if (ac == 5 || ac == 6)
+	{
+		if (datating(data, av, ac - 5))
+			return (0);
+	}
+    philo(data);
+    cl_ean(data);
+	return (0);
 }

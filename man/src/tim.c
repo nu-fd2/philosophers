@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_error.c                                         :+:      :+:    :+:   */
+/*   tim.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 00:51:43 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/09/30 07:47:01 by oel-mado         ###   ########.fr       */
+/*   Created: 2025/09/30 06:43:38 by oel-mado          #+#    #+#             */
+/*   Updated: 2025/09/30 06:45:01 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
-void	is_error(char *str, void *p1, void *p2)
+int ck_dee(t_data *data)
 {
-	if (str)
-		printf("\e[1;31m%s\e[0m\n", str);
-	if (p1)
-		free(p1);
-	if (p2)
-		free(p2);
-	write(2, "\e[1;31mError\e[0m\n", 17);
-	exit(1);
+    
 }

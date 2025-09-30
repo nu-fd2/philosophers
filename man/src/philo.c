@@ -6,34 +6,44 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 00:47:27 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/09/27 05:50:49 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/09/30 08:25:31 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-int	main(int ac, char **av)
+void clean(t_data *data)
 {
-	t_ool			tool;
+	int i;
 
-	if (ac == 5 || ac == 6)
-	{
-		if (sep(&tool, av, ac - 5))
-			return (0);
-	}
-
-
-	return (0);
+	i = 0;
+	while (i < data->n_of_phe)
+		free(data->phees[i++]);
+	i = 0;
+	while (i < data->n_of_phe)
+		free(data->forks[i++]);
+	free(data);
 }
 
-int act(t_philo *eep)
+int philo(t_data *data)
 {
-	pthread_mutex_lock(&eep->tool->m_prnt);
-	while (1)
+	int i;
+
+	i = 0;
+	while (i < data->n_of_phe)
 	{
-		usleep(10000);
-		write(1, ".", 1);
-		write(1, "\n", 1);
+		if (pthread_create(&((data)->phees)[i]->trd, NULL, act, (data->phees)[i]) != 0)
+			is_error("cant creat thread", NULL, NULL);
+		i++;
 	}
-	pthread_mutex_unlock(&eep->tool->m_prnt);
+
+	//---
+
+	while (!check_death(data))
+	{
+		i = 0;
+		while (!check_death(data))
+			pthread_join(((data->phees)->trd)[i++], NULL);
+	}
+	pthread_join(data->moon, NULL);
 }
