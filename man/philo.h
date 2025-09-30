@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 00:49:00 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/09/30 08:23:03 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/09/30 14:51:38 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <stdbool.h>
 # include <sys/time.h>
 
-void	is_error(char *str, void *p1, void *p2);
+void	is_error(t_data *data, char *err, int ts);
 int		ft_atoi(const char *str);
 
 int check_death(t_data *data);
@@ -30,8 +30,9 @@ long long get_time();
 int print(t_data *data, int philo, char *act);
 
 int philo(t_data *data);
+int act(t_philo *philo);
 
-void clean(t_data *data);
+void p_clean(t_data *data);
 
 
 typedef struct s_philo

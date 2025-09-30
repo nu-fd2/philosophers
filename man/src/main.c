@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 06:39:10 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/09/30 07:37:25 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/09/30 14:48:30 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int	main(int ac, char **av)
 			return (0);
 	}
     philo(data);
-    cl_ean(data);
+    p_clean(data);
 	return (0);
 }

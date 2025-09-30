@@ -6,20 +6,31 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 00:51:43 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/09/30 07:47:01 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/09/30 12:22:06 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	is_error(char *str, void *p1, void *p2)
+void prnt_err(char *s)
 {
-	if (str)
-		printf("\e[1;31m%s\e[0m\n", str);
-	if (p1)
-		free(p1);
-	if (p2)
-		free(p2);
-	write(2, "\e[1;31mError\e[0m\n", 17);
+	int i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		write(2, &s[i], 1);
+		i++;
+	}
+	return ;
+}
+
+void	is_error(t_data *data, char *err, int ts)
+{
+	if (err)
+		prnt_err(err);
+	p_clean(data);
 	exit(1);
 }
