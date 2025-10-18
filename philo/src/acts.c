@@ -6,23 +6,23 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 06:38:07 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/09/30 07:05:40 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/10/04 21:11:49 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
-int act(t_philo *eep)
-{
-	pthread_mutex_lock(&eep->data->m_prnt);
-	while (1)
-	{
-		usleep(10000);
-		write(1, ".", 1);
-		write(1, "\n", 1);
-	}
-	pthread_mutex_unlock(&eep->data->m_prnt);
-}
+// int act(t_philo *eep)
+// {
+// 	pthread_mutex_lock(&eep->data->m_prnt);
+// 	while (1)
+// 	{
+// 		usleep(10000);
+// 		write(1, ".", 1);
+// 		write(1, "\n", 1);
+// 	}
+// 	pthread_mutex_unlock(&eep->data->m_prnt);
+// }
 
 int check_death(t_data *data)
 {

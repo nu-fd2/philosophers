@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 00:49:00 by oel-mado          #+#    #+#             */
-/*   Updated: 2025/09/30 14:51:38 by oel-mado         ###   ########.fr       */
+/*   Updated: 2025/10/04 21:03:50 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ long long get_time();
 int print(t_data *data, int philo, char *act);
 
 int philo(t_data *data);
-int act(t_philo *philo);
+int ft_act(t_philo *philo);
 
 void p_clean(t_data *data);
 
